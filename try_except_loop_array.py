@@ -1,3 +1,13 @@
+class User:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+def find_the_oldest_user(users):
+    if not users:
+        return None
+    return max(users, key=lambda user:user.age)
+
 user_infos = {}
 
 while True: # First loop
@@ -33,6 +43,9 @@ while True: # First loop
 
         # Setting conditions for retry
         if retry == "No":
+            oldest_user = find_the_oldest_user(user_infos)
+            if oldest_user:
+                print(f"The oldest user is: {oldest_user.name} with age {oldest_user.age}")
             break # To break the outer loop  if the user says "No"
         elif retry == "Yes":
             continue # To continue the outer loop if the user says "Yes"
