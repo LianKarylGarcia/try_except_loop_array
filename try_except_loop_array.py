@@ -29,12 +29,19 @@ while True: # First loop
         print(f"Name: {user_infos[name]['name']}")
         print(f"Age: {user_infos[name]['age']}")
 
-        retry = input("Retry? ") # To ask user if they want to retry again
+        retry = input("Retry? Yes or no? ") # To ask user if they want to retry again
 
-        break # To break the outer loop if both inputs are valid
+        # Setting conditions for retry
+        if retry == "No":
+            break # To break the outer loop  if the user says "No"
+        elif retry == "Yes":
+            continue # To continue the outer loop if the user says "Yes"
+        else: 
+            print("Invalid response. Please enter 'Yes' or 'No'")
 
     except ValueError:
         print("Input invalid. Please input correct values.")
-
+        
+    
 
 
