@@ -26,6 +26,9 @@ while True: # First loop
             "age" : age
         }
         
+        print(f"Name: {user_infos[name]['name']}")
+        print(f"Age: {user_infos[name]['age']}")
+
         break # To break the outer loop if both inputs are valid
 
     except ValueError:
